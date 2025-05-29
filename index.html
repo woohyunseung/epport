@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Epport, 혼자가 아닌 팀과 함께</title>
+	<link rel="stylesheet" href="style.css" />
+</head>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const buttons = document.querySelectorAll('.select-buttons button');
+		const categories = document.querySelectorAll('.portfolio-items .category');
+
+		function showCategory(category) {
+			categories.forEach(cat => {
+				cat.style.display = 'none';
+			});
+
+			buttons.forEach(btn => btn.classList.remove('active'));
+			document.querySelector(`.select-buttons button[data-filter="${category}"]`).classList.add('active');
+
+			const target = document.querySelector(`.category.${category}`);
+			if (target) {
+				target.style.display = 'flex';
+
+				target.classList.remove('fade-in'); // 재적용 위해 제거 후 추가
+				void target.offsetWidth; // 강제로 리렌더
+				target.classList.add('fade-in');
+			}
+		}
+
+		// 초기값: 썸네일
+		showCategory('thumbnail');
+
+		buttons.forEach(button => {
+			button.addEventListener('click', () => {
+				const category = button.getAttribute('data-filter');
+				showCategory(category);
+			});
+		});
+	});
+</script>
+
+<body>
+	<!--
+	<header>
+		<div id="header">
+			<a href="/"><div id="header-title"></div></a>
+			<div id="btnsection">
+				<a href="/contact"><div id="1" class="header-btn">외주 문의</div></a>
+			</div>
+		</div>
+	</header>
+	-->
+
+	<section class="video-section">
+		<iframe width="100%" height="100%" src="https://www.youtube.com/embed/IEAJtj-Tuo4?si=XJknLORwpdGk5a8Z&amp;controls=0&autoplay=1&mute=1&loop=1&playlist=IEAJtj-Tuo4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+		<div class="video-overlay">
+			<div class="main-title fade-in">함께 성장하는 팀 Epport</div>
+			<div class="main-expl fade-in" style="animation-delay: 0.5s;">혼자가 아닌 팀과 함께. 저희가 여러분의 콘텐츠를 함께 책임지겠습니다!</div>
+			<!--<a href="/contact" style="margin: 20px 0px -20px 0px;"><div class="main-btn fade-in" style="animation-delay: 1.5s;">영상 편집 문의하기</div></a>-->
+		</div>
+	</section>
+	
+	<section id="0" style="background-color: #222; padding: 10px 0px; text-align: center; color: #fff;">(스크롤을 내려 저희에 대해 더 자세히 알아보세요)</section>
+
+	<section id="1">
+		<div class="section">
+			<div class="title">에포트가 하는 일</div>
+			<div class="board">
+				<div id="1" class="card">
+					<div class="card-image" style="background-image: url('media/card_1.png');"></div>
+					<div class="card-title">영상 편집</div>
+					<div class="card-expl">생방송 클립부터 직접 녹화한 영상까지<br>컷편집·자막·효과 전부 가능해요</div>
+				</div>
+				<div id="2" class="card">
+					<div class="card-image" style="background-image: url('media/card_2.png');"></div>
+					<div class="card-title">썸네일 제작</div>
+					<div class="card-expl">채널과 영상 주제에 맞는,<br>깔끔하고 트렌디한 썸네일을 만들어요</div>
+				</div>
+				<div id="3" class="card">
+					<div class="card-image" style="background-image: url('media/card_3.png');"></div>
+					<div class="card-title">커뮤니티 디자인</div>
+					<div class="card-expl">디스코드 서버 채널, 카페 게시판·대문 등<br>여러 디자인을 도와드려요</div>
+				</div>
+				<div style="margin-top: 10px; color: #777;">(조금 더 내리다 보면 포트폴리오도 있어요)</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="2" style="background-color: #fff;">
+		<div class="section">
+			<div class="title">에포트와 함께 해야 하는 이유</div>
+			<div class="list">
+				<div class="list-section">
+					<div class="list-title">1. 비용이 합리적입니다</div>
+					<div class="list-expl">
+						함께 성장할 크리에이터분들을 대상으로 외주를 진행하는 만큼,
+						<br>
+						합리적인 비용으로 최고의 콘텐츠 활동을 할 수 있게 도와드립니다.
+					</div>
+				</div>
+				<line></line>
+				<div class="list-section">
+					<div class="list-title">2. 신속하고 안정적입니다</div>
+					<div class="list-expl">
+						한 명의 메인 편집자와 최소 한 명 이상의 보조 편집자가 함께 편집에 참여하여,
+						<br>
+						편집자 개인이 어떤 사정이 생기더라도 정해진 기한 내에 영상이 완성될 수 있도록 합니다.
+					</div>
+				</div>
+				<line></line>
+				<div class="list-section">
+					<div class="list-title">3. 따라가지 않고 앞서갑니다</div>
+					<div class="list-expl">
+						에포트는 10·20대가 주축이 되는 편집 팀으로, 요즘 감성과 최신 트렌드를 빠르게 반영할 수 있습니다.
+						<br>
+						신선하고 생동감 있는 편집 스타일로 앞서나가는 차별화된 콘텐츠를 만듭니다.
+					</div>
+				</div>
+				<line></line>
+				<div class="list-section">
+					<div class="list-title">4. Effort <label style="color: #777; font-size: 24px;">(노력)</label></div>
+					<div class="list-expl">
+						에포트는 단순한 1회성 외주에 그치지 않고,<br>
+						장기적으로 믿고 맡길 수 있는 여러분의 파트너가 되는 것을 목표로 합니다.<br>
+						늘 꾸준한 퀄리티와 성실한 소통으로, 맡기실 때마다 믿고 기대하실 수 있도록 노력하겠습니다.
+					</div>
+					<div style="margin-top: 10px; color: #888; text-align: center;">(저희 팀의 이름인 Epport는 Effort(노력)와 Edit(편집)+Support(도움)의 뜻이 담겨 있어요)</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="3">
+		<div class="section" style="max-width: 1400px;">
+			<div class="title">에포트폴리오</div>
+			<div class="expl">Epport의 서포터들이 만든 다양한 작업물들을 확인해 보세요!</div>
+			<div class="select-buttons">
+				<button data-filter="thumbnail" class="active">썸네일</button>
+				<button data-filter="video">동영상</button>
+				<button data-filter="community">커뮤니티 디자인</button>
+			</div>
+			<div class="portfolio-items">
+				<div class="category thumbnail">
+					<div class="item">
+						<img class="item_thumbnail" src="media/portfolio/p_1.png">
+						<div class="item_info">
+							<div class="maker">우현승 서포터</div>
+							<div class="type">개인 유튜브 작업</div>
+						</div>
+					</div>
+					<div class="item">
+						<img class="item_thumbnail" src="media/portfolio/p_2.png">
+						<div class="item_info">
+							<div class="maker">우현승 서포터</div>
+							<div class="type">개인 유튜브 작업</div>
+						</div>
+					</div>
+					<div class="item">
+						<img class="item_thumbnail" src="media/portfolio/p_3.png">
+						<div class="item_info">
+							<div class="maker">우현승 서포터</div>
+							<div class="type">개인 유튜브 작업</div>
+						</div>
+					</div>
+					<div class="item">
+						<img class="item_thumbnail" src="media/portfolio/p_4.png">
+						<div class="item_info">
+							<div class="maker">우현승 서포터</div>
+							<div class="type">개인 유튜브 작업</div>
+						</div>
+					</div>
+					<div class="item">
+						<img class="item_thumbnail" src="media/portfolio/p_5.png">
+						<div class="item_info">
+							<div class="maker">우현승 서포터</div>
+							<div class="type">개인 유튜브 작업</div>
+						</div>
+					</div>
+					<div class="item">
+						<img class="item_thumbnail" src="media/portfolio/p_6.png">
+						<div class="item_info">
+							<div class="maker">우현승 서포터</div>
+							<div class="type">개인 유튜브 작업</div>
+						</div>
+					</div>
+					<div class="item">
+						<img class="item_thumbnail" src="media/portfolio/p_7.png">
+						<div class="item_info">
+							<div class="maker">우현승 서포터</div>
+							<div class="type">개인 유튜브 작업</div>
+						</div>
+					</div>
+					<div class="item">
+						<img class="item_thumbnail" src="media/portfolio/p_8.png">
+						<div class="item_info">
+							<div class="maker">우현승 서포터</div>
+							<div class="type">개인 유튜브 작업</div>
+						</div>
+					</div>
+					<div class="item">
+						<img class="item_thumbnail" src="media/portfolio/p_9.png">
+						<div class="item_info">
+							<div class="maker">우현승 서포터</div>
+							<div class="type">개인 유튜브 작업</div>
+						</div>
+					</div>
+					<div class="item">
+						<img class="item_thumbnail" src="media/portfolio/p_10.png">
+						<div class="item_info">
+							<div class="maker">우현승 서포터</div>
+							<div class="type">개인 유튜브 작업</div>
+						</div>
+					</div>
+					<div class="item">
+						<img class="item_thumbnail" src="media/portfolio/p_11.png">
+						<div class="item_info">
+							<div class="maker">우현승 서포터</div>
+							<div class="type">개인 유튜브 작업</div>
+						</div>
+					</div>
+					<div class="item">
+						<img class="item_thumbnail" src="media/portfolio/p_12.png">
+						<div class="item_info">
+							<div class="maker">우현승 서포터</div>
+							<div class="type">유튜브 '겜준영' 외주 작업</div>
+						</div>
+					</div>
+					<div class="item">
+						<img class="item_thumbnail" src="media/portfolio/p_13.png">
+						<div class="item_info">
+							<div class="maker">우현승 서포터</div>
+							<div class="type">유튜브 '에스코' 외주 작업</div>
+						</div>
+					</div>
+					<div class="item">
+						<img class="item_thumbnail" src="media/portfolio/p_14.png">
+						<div class="item_info">
+							<div class="maker">우현승 서포터</div>
+							<div class="type">유튜브 '에스코' 외주 작업</div>
+						</div>
+					</div>
+					<div class="item">
+						<img class="item_thumbnail" src="media/portfolio/p_15.png">
+						<div class="item_info">
+							<div class="maker">우현승 서포터</div>
+							<div class="type">유튜브 '에스코' 외주 작업</div>
+						</div>
+					</div>
+					<!--<div class="item">
+						<img class="item_thumbnail" src="media/portfolio/p_16.png">
+						<div class="item_info">
+							<div class="maker">우현승 서포터</div>
+							<div class="type">유튜브 '에스코' 외주 작업</div>
+						</div>
+					</div>-->
+					<div class="item">
+						<img class="item_thumbnail" src="media/portfolio/p_17.png">
+						<div class="item_info">
+							<div class="maker">우현승 서포터</div>
+							<div class="type">개인 유튜브 작업</div>
+						</div>
+					</div>
+				</div>
+				<div class="category video">
+					<div class="item">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/9QfpO93aA3M?si=GgyAbQFG8tVtXzQn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+						<div class="item_info">
+							<div class="maker">우현승 서포터</div>
+							<div class="type">개인 유튜브 작업</div>
+						</div>
+					</div>
+					<div class="item">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/qiNonZfNa44?si=FnIsHkkqi6NWSBSO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+						<div class="item_info">
+							<div class="maker">우현승 서포터</div>
+							<div class="type">개인 유튜브 작업</div>
+						</div>
+					</div>
+					<div class="item">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/TNjhetnjlao?si=x3vUYSQs-wdLxEHq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+						<div class="item_info">
+							<div class="maker">우현승 서포터</div>
+							<div class="type">개인 유튜브 작업</div>
+						</div>
+					</div>
+					<div class="item">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/k-LWzPPvv6U?si=ooxE7NBLHGrwjvXO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+						<div class="item_info">
+							<div class="maker">우현승 서포터</div>
+							<div class="type">개인 유튜브 작업</div>
+						</div>
+					</div>
+					<div class="item">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/dXLuQuVJ2y8?si=bpYGfKcRZmqusIBZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+						<div class="item_info">
+							<div class="maker">우현승 서포터</div>
+							<div class="type">개인 유튜브 작업</div>
+						</div>
+					</div>
+					<div class="item">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/ClDm1hkaBcc?si=t7ZVOMl4VU_sB4LI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+						<div class="item_info">
+							<div class="maker">우현승 서포터</div>
+							<div class="type">개인 유튜브 작업</div>
+						</div>
+					</div>
+					<div class="item">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/ucM0wj9C0sE?si=0hottdmCa78m7lQH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+						<div class="item_info">
+							<div class="maker">우현승 서포터</div>
+							<div class="type">유튜브 '에스코' 외주 작업 / 기여도 80%</div>
+						</div>
+					</div>
+					<div class="item">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/kOuE4AFO_8I?si=l6bHlEJF0IGO0MME" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+						<div class="item_info">
+							<div class="maker">우현승 서포터</div>
+							<div class="type">유튜브 '에스코' 외주 작업 / 기여도 80%</div>
+						</div>
+					</div>
+					<div class="item">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/rrA3EEpz6TI?si=EHEyZkGdBiSbF_gr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+						<div class="item_info">
+							<div class="maker">우현승 서포터</div>
+							<div class="type">유튜브 '에스코' 외주 작업 / 기여도 80%</div>
+						</div>
+					</div>
+					<div class="item">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/VspFlhDr5sE?si=Ns_dEIsWDEJYfPEz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+						<div class="item_info">
+							<div class="maker">우현승 서포터</div>
+							<div class="type">유튜브 '에스코' 외주 작업 / 기여도 80%</div>
+						</div>
+					</div>
+				</div>
+				<div class="category community">
+					<div class="item">
+						<img class="item_community" src="media/portfolio/p_c1.png">
+						<div class="item_info">
+							<div class="maker">우현승 서포터</div>
+							<div class="type">네이버 카페 '결의시간' 배너·대문 제작</div>
+						</div>
+					</div>
+					<div class="item">
+						<img class="item_community" src="media/portfolio/p_c2.png">
+						<div class="item_info">
+							<div class="maker">우현승 서포터</div>
+							<div class="type">개인 SOOP 채널 타이틀 이미지 작업</div>
+						</div>
+					</div>
+					<div class="item">
+						<img class="item_community" src="media/portfolio/p_c3.png">
+						<div class="item_info">
+							<div class="maker">우현승 서포터</div>
+							<div class="type">지금 당신이 보고 있는 이 사이트를 제작</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="4" style="background-color: #fff;">
+		<div class="section">
+			<div class="title">문의</div>
+			<div class="expl">상세한 가격 협의, 외주에 필요한 자료 안내 등은 전부 디스코드를 통해 도와드리겠습니다!</div>
+			<div class="btn">
+				<a href="/contact"><div class="contact-btn">디스코드에서 문의하기</div></a>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		&copy; 2025 Epport, 혼자가 아닌 팀과 함께.
+	</footer>
+</body>
+</html>
