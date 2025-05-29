@@ -111,7 +111,7 @@ section {
     width: 100%;
 }
 .section {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0px auto;
     padding: 88px 40px;
 }
@@ -178,7 +178,7 @@ section .card:hover {
     text-align: center;
 }
 .board{
-    width: 1200px;
+    width: 1400px;
     margin-top: 40px;
     display: flex;
     flex-wrap: wrap;
@@ -270,7 +270,7 @@ section .card:hover {
     transition-duration: 0.25s;
     padding: 20px 30px;
     border-radius: 50px;
-    width: 150px;
+    width: 180px;
     text-align: center;
 }
 .contact-btn:hover{
